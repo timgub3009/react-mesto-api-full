@@ -14,7 +14,7 @@ const regex = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]
 const { PORT = 3000 } = process.env;
 const DATABASE = 'mongodb://localhost:27017/mestodb';
 
-const { NODE_ENV, SECRET_SIGNING_KEY } = process.env;
+const { NODE_ENV, JWT_SECRET_KEY } = process.env;
 
 module.exports = {
   BAD_REQUEST_ERROR_CODE,
@@ -28,5 +28,5 @@ module.exports = {
   DATABASE,
   regex,
   NODE_ENV,
-  SECRET_SIGNING_KEY,
+  JWT_SECRET_KEY,
 };

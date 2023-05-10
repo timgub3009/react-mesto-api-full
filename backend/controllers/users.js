@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
 const { OK } = require('../utils/config');
-const { NODE_ENV, JWT_SECRET } = require('../utils/config');
+const { NODE_ENV, JWT_SECRET_KEY } = require('../utils/config');
 
 const getUsers = (req, res, next) => {
   User.find({})
@@ -83,7 +83,7 @@ const login = (req, res, next) => {
 
   User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key', {
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET_KEY : 'some-secret-key', {
         expiresIn: '7d',
       });
 
