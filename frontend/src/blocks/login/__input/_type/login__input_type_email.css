@@ -1,8 +1,0 @@
-.login__input_type_email {
-    margin-bottom: 38px;
-    border-bottom: 2px solid rgba(204, 204, 204, 1);
-  }
-  
-  .login__input_type_email::placeholder {
-    color: #c4c4c4;
-  }

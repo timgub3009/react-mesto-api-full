@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const BAD_REQUEST_ERROR_CODE = 400;
 const UNAUTHORIZED_ERROR_CODE = 401;
 const FORBIDDEN_ERROR_CODE = 403;
@@ -12,6 +14,8 @@ const regex = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]
 const { PORT = 3000 } = process.env;
 const DATABASE = 'mongodb://localhost:27017/mestodb';
 
+const { NODE_ENV, SECRET_SIGNING_KEY } = process.env;
+
 module.exports = {
   BAD_REQUEST_ERROR_CODE,
   UNAUTHORIZED_ERROR_CODE,
@@ -23,4 +27,6 @@ module.exports = {
   PORT,
   DATABASE,
   regex,
+  NODE_ENV,
+  SECRET_SIGNING_KEY,
 };

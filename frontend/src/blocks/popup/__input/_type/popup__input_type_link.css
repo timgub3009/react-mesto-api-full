@@ -1,9 +1,0 @@
-.popup__input_type_link {
-  padding-bottom: 10px;
-  margin-bottom: 46px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.popup__input_type_link::placeholder {
-  color: #c4c4c4;
-}
