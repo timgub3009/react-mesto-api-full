@@ -39,8 +39,6 @@ app.use(errorLogger);
 app.use(errors());
 app.use(handelErrors);
 
-app.listen(PORT);
+mongoose.connect(DATABASE);
 
-mongoose.connect(DATABASE, {
-  useNewUrlParser: true,
-});
+app.listen(PORT);
