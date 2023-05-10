@@ -1,0 +1,17 @@
+.popup__container_type_closeup {
+    max-width: unset;
+    background-color: unset;
+    border-radius: unset;
+    width: unset;
+    position: relative;
+    max-height: unset;
+    margin: 0;
+}
+  
+  @media screen and (max-width: 499px) {
+    .popup__container_type_closeup {
+      min-width: unset;
+      max-height: unset;
+    }
+  }
+  

@@ -1,0 +1,12 @@
+.login__error {
+    opacity: 0;
+    color: rgba(255, 0, 0, 1);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.21;
+    transition: 0.3s;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    min-width: 358px;
+}
