@@ -97,6 +97,15 @@ const login = (req, res, next) => {
     .catch(next);
 };
 
+const signOut = (req, res, next) => {
+  res.clearCookie('jwt', {
+    maxAge: 3600000 * 24 * 7,
+    httpOnly: true,
+  })
+    .send({ message: 'Вы вышли из профиля ' })
+    .catch(next);
+};
+
 module.exports = {
   getUsers,
   getUser,
@@ -105,4 +114,5 @@ module.exports = {
   updateProfile,
   updateAvatar,
   login,
+  signOut,
 };
