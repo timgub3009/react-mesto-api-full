@@ -8,7 +8,7 @@ const { NODE_ENV, JWT_SECRET_KEY } = require('../utils/config');
 const getUsers = (req, res, next) => {
   User.find({})
     .then((users) => {
-      res.send({ data: users });
+      res.send(users);
     })
     .catch(next);
 };
@@ -19,7 +19,7 @@ const handleSearchById = (req, res, data, next) => {
       throw new NotFoundError('Пользователь не найден');
     })
     .then((user) => {
-      res.send({ data: user });
+      res.send(user);
     })
     .catch(next);
 };
@@ -63,7 +63,7 @@ const handleUserUpdate = (req, res, data, next) => {
       throw new NotFoundError('Пользователь не найден');
     })
     .then((user) => {
-      res.send({ data: user });
+      res.send(user);
     })
     .catch(next);
 };

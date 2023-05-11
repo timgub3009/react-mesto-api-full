@@ -7,7 +7,7 @@ const getCards = (req, res, next) => {
   Card.find({})
     .populate(['owner', 'likes'])
     .then((cards) => {
-      res.send({ data: cards });
+      res.send(cards);
     })
     .catch(next);
 };
@@ -18,7 +18,7 @@ const createCard = (req, res, next) => {
   Card.create({ name, link, owner: req.user._id })
     .then((card) => card.populate('owner'))
     .then((card) => {
-      res.status(OK).send({ data: card });
+      res.status(OK).send(card);
     })
     .catch(next);
 };
@@ -33,7 +33,7 @@ const deleteCard = (req, res, next) => {
       if (!card.owner.equals(req.user._id)) {
         throw new ForbiddenError('Нельзя удалить чужую карточку');
       } else {
-        return Card.deleteOne(card).then(() => res.send({ data: card }));
+        return Card.deleteOne(card).then(() => res.send(card));
       }
     })
     .catch(next);
@@ -47,7 +47,7 @@ const handleLikes = (req, res, data, next) => {
     })
     .populate(['owner', 'likes'])
     .then((likes) => {
-      res.send({ data: likes });
+      res.send(likes);
     })
     .catch(next);
 };
