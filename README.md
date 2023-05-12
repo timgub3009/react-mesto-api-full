@@ -1,15 +1,26 @@
 [![Tests](https://github.com/yandex-praktikum/react-mesto-api-full-gha/actions/workflows/tests.yml/badge.svg)](https://github.com/yandex-praktikum/react-mesto-api-full-gha/actions/workflows/tests.yml)
-# react-mesto-api-full
-Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположите в директории `backend/`, а фронтенд - в `frontend/`. 
-  
-Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
+# описание проекта
+Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Проект выложен на облаке Yandex, используемом в качестве сервера. Финальный проект курса Веб-разработчик.  
 
-## Ссылки на проект
+Адрес репозитория: https://github.com/timgub3009/react-mesto-api-full; 
 
-IP-адрес x.x.x.x
+# структура проекта
 
-Frontend https://...
+/backend — файлы бэкенда
+⋅⋅*/controllers — контроллеры
+⋅⋅*/errors — ошибки
+⋅⋅*/middlewares — мидлвары
+⋅⋅*/models — модели
+⋅⋅*/routes — роуты
+⋅⋅*/utils — конфиги
+/frontend — директория с файлами фронтенд части проекта
 
-Backend https://...
+## ссылки на проект
+
+IP-адрес : 51.250.99.60;
+
+Frontend : https://timgub.nomoredomains.monster/;
+
+Backend : https://api.timgub.nomoredomains.monster/;
+
