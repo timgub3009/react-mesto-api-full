@@ -18,9 +18,9 @@
 
 ## ссылки на проект
 
-IP-адрес : 51.250.99.60;
+IP-адрес 51.250.99.60;
 
-Frontend : https://timgub.nomoredomains.monster/;
+Frontend https://timgub.nomoredomains.monster/;
 
-Backend : https://api.timgub.nomoredomains.monster/;
+Backend https://api.timgub.nomoredomains.monster/;
 
