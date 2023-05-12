@@ -8,17 +8,18 @@
 # структура проекта
 
 /backend — файлы бэкенда
-⋅⋅*/controllers — контроллеры
-⋅⋅*/errors — ошибки
-⋅⋅*/middlewares — мидлвары
-⋅⋅*/models — модели
-⋅⋅*/routes — роуты
-⋅⋅*/utils — конфиги
+
+*/controllers — контроллеры
+*/errors — ошибки
+*/middlewares — мидлвары
+*/models — модели
+*/routes — роуты
+*/utils — конфиги
 /frontend — директория с файлами фронтенд части проекта
 
 ## ссылки на проект
 
-IP-адрес 51.250.99.60;
+IP 51.250.99.60;
 
 Frontend https://timgub.nomoredomains.monster/;
 
