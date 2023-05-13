@@ -50,7 +50,6 @@ const createUser = (req, res, next) => {
     }))
     .then((user) => {
       const userData = user.toObject();
-      delete userData.password;
       res.status(OK).send(userData);
     })
     .catch(next);
@@ -83,9 +82,13 @@ const login = (req, res, next) => {
 
   User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET_KEY : 'some-secret-key', {
-        expiresIn: '7d',
-      });
+      const token = jwt.sign(
+        { _id: user._id },
+        NODE_ENV === 'production' ? JWT_SECRET_KEY : 'some-secret-key',
+        {
+          expiresIn: '7d',
+        },
+      );
 
       res
         .cookie('jwt', token, {
@@ -99,10 +102,11 @@ const login = (req, res, next) => {
 };
 
 const signOut = (req, res, next) => {
-  res.clearCookie('jwt', {
-    maxAge: 3600000 * 24 * 7,
-    httpOnly: true,
-  })
+  res
+    .clearCookie('jwt', {
+      maxAge: 3600000 * 24 * 7,
+      httpOnly: true,
+    })
     .send({ message: 'Вы вышли из профиля ' })
     .catch(next);
 };

@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const { isEmail } = require('validator');
 const mongoose = require('mongoose');
 const UnauthorizedError = require('../errors/UnauthorizedError');
+const { regex } = require('../utils/config');
 
 const userSchema = new mongoose.Schema(
   {
@@ -19,6 +20,10 @@ const userSchema = new mongoose.Schema(
     },
     avatar: {
       type: String,
+      validate: {
+        validator: (link) => regex.test(link),
+        message: 'Некорректный url аватара',
+      },
       default:
         'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',
     },
@@ -44,7 +49,10 @@ const userSchema = new mongoose.Schema(
   },
 );
 
-userSchema.statics.findUserByCredentials = function findUserByCredentials(email, password) {
+userSchema.statics.findUserByCredentials = function findUserByCredentials(
+  email,
+  password,
+) {
   return this.findOne({ email })
     .select('+password')
     .then((user) => {
