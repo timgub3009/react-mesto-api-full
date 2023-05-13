@@ -50,7 +50,6 @@ const createUser = (req, res, next) => {
     }))
     .then((user) => {
       const userData = user.toObject();
-      delete userData.password;
       res.status(OK).send(userData);
     })
     .catch(next);
@@ -95,7 +94,6 @@ const login = (req, res, next) => {
         .cookie('jwt', token, {
           maxAge: 3600000 * 24 * 7,
           httpOnly: true,
-          sameSite: 'None',
         })
         .send({ message: 'Аутентификация успешна!' });
     })
